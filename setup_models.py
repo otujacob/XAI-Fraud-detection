@@ -1,15 +1,11 @@
-"""
-setup_models.py — Run this ONCE to train and save models on your machine.
+import argparse
+import sys
+import os
+import time
+import warnings
+import pickle
+import json
 
-Usage:
-    python setup_models.py --data path/to/NIBSS_FRAUD_DATASET.csv
-
-This takes approximately 5-10 minutes on a standard laptop.
-It saves models/rf_model.pkl and models/iso_forest.pkl
-compatible with your local Python/sklearn version.
-"""
-
-import argparse, sys, os, time, warnings, pickle, json
 warnings.filterwarnings('ignore')
 
 parser = argparse.ArgumentParser(description='Train and save XAI fraud detection models.')
