@@ -1,0 +1,274 @@
+{
+  "results": {
+    "B1: RF Alone": {
+      "Precision": 1.0,
+      "Recall": 0.436,
+      "F1": 0.6072,
+      "AUC_ROC": 0.9583,
+      "PR_AUC": 0.786,
+      "MCC": 0.66,
+      "TP": 143,
+      "FP": 0,
+      "FN": 185
+    },
+    "B2: IF Alone": {
+      "Precision": 0.0015,
+      "Recall": 0.0274,
+      "F1": 0.0029,
+      "AUC_ROC": 0.5078,
+      "PR_AUC": 0.0018,
+      "MCC": -0.0009,
+      "TP": 9,
+      "FP": 5810,
+      "FN": 319
+    },
+    "B3: RF + ADASYN": {
+      "Precision": 1.0,
+      "Recall": 0.5122,
+      "F1": 0.6774,
+      "AUC_ROC": 0.9442,
+      "PR_AUC": 0.7117,
+      "MCC": 0.7154,
+      "TP": 168,
+      "FP": 0,
+      "FN": 160
+    },
+    "Full Hybrid: IF+RF+ADASYN": {
+      "Precision": 1.0,
+      "Recall": 0.4909,
+      "F1": 0.6585,
+      "AUC_ROC": 0.9434,
+      "PR_AUC": 0.6997,
+      "MCC": 0.7003,
+      "TP": 161,
+      "FP": 0,
+      "FN": 167
+    },
+    "XGBoost+IF+ADASYN": {
+      "Precision": 1.0,
+      "Recall": 0.6646,
+      "F1": 0.7985,
+      "AUC_ROC": 0.9573,
+      "PR_AUC": 0.8037,
+      "MCC": 0.815,
+      "TP": 218,
+      "FP": 0,
+      "FN": 110
+    },
+    "Ensemble: RF+XGB+IF+ADASYN": {
+      "Precision": 1.0,
+      "Recall": 0.6128,
+      "F1": 0.7599,
+      "AUC_ROC": 0.9591,
+      "PR_AUC": 0.7978,
+      "MCC": 0.7826,
+      "TP": 201,
+      "FP": 0,
+      "FN": 127
+    }
+  },
+  "hitl": [
+    {
+      "cycle": 0,
+      "tp_block": 146,
+      "fp_block": 0,
+      "tp_review": 96,
+      "recall_block": 0.4451,
+      "pr_auc": 0.7978
+    },
+    {
+      "cycle": 1,
+      "tp_block": 224,
+      "fp_block": 0,
+      "tp_review": 64,
+      "recall_block": 0.6829,
+      "pr_auc": 0.7864
+    },
+    {
+      "cycle": 2,
+      "tp_block": 231,
+      "fp_block": 0,
+      "tp_review": 82,
+      "recall_block": 0.7043,
+      "pr_auc": 0.8445
+    },
+    {
+      "cycle": 3,
+      "tp_block": 231,
+      "fp_block": 0,
+      "tp_review": 86,
+      "recall_block": 0.7043,
+      "pr_auc": 0.8642
+    }
+  ],
+  "cases": {
+    "A": {
+      "prob_rf": 0.8892,
+      "prob_xgb": 0.9976,
+      "prob_ens": 0.9434,
+      "true_y": 1,
+      "amount": 495886.39,
+      "channel": "Mobile",
+      "hour": 7,
+      "bank": "UBA",
+      "shap": [
+        [
+          "amount",
+          0.1373
+        ],
+        [
+          "amount_sum_24h",
+          0.1044
+        ],
+        [
+          "amount_vs_mean_ratio",
+          0.0954
+        ],
+        [
+          "amount_log",
+          0.0869
+        ],
+        [
+          "velocity_score",
+          0.04
+        ]
+      ]
+    },
+    "B": {
+      "prob_rf": 0.3739,
+      "prob_xgb": 0.3112,
+      "prob_ens": 0.3425,
+      "true_y": 0,
+      "amount": 357363.34,
+      "channel": "Mobile",
+      "hour": 14,
+      "bank": "Sterling",
+      "shap": [
+        [
+          "amount_sum_24h",
+          -0.0465
+        ],
+        [
+          "month_sin",
+          0.0443
+        ],
+        [
+          "amount",
+          0.0419
+        ],
+        [
+          "month",
+          -0.0308
+        ],
+        [
+          "amount_mean_total",
+          -0.0269
+        ]
+      ]
+    },
+    "C": {
+      "prob_rf": 0.045,
+      "prob_xgb": 0.0006,
+      "prob_ens": 0.0228,
+      "true_y": 0,
+      "amount": 10236.58,
+      "channel": "Mobile",
+      "hour": 12,
+      "bank": "Wema",
+      "shap": [
+        [
+          "amount",
+          -0.1746
+        ],
+        [
+          "amount_log",
+          -0.1484
+        ],
+        [
+          "tx_count_24h",
+          -0.0426
+        ],
+        [
+          "amount_vs_mean_ratio",
+          0.0352
+        ],
+        [
+          "hour_cos",
+          -0.0279
+        ]
+      ]
+    }
+  },
+  "feat_imp": [
+    [
+      "amount",
+      0.12357809261923586
+    ],
+    [
+      "amount_log",
+      0.10782647070909525
+    ],
+    [
+      "amount_vs_mean_ratio",
+      0.09843619028711027
+    ],
+    [
+      "amount_sum_24h",
+      0.07346404975916752
+    ],
+    [
+      "velocity_score",
+      0.04363456274088002
+    ],
+    [
+      "month_sin",
+      0.039909750980006646
+    ],
+    [
+      "month_cos",
+      0.029213750635030705
+    ],
+    [
+      "channel_Mobile",
+      0.028116190508241375
+    ],
+    [
+      "is_peak_hour",
+      0.026447066330683524
+    ],
+    [
+      "day_cos",
+      0.02633039665852154
+    ],
+    [
+      "month",
+      0.025142980006072232
+    ],
+    [
+      "tx_count_24h",
+      0.02471341396178009
+    ],
+    [
+      "hour_cos",
+      0.02368068638901599
+    ],
+    [
+      "day_sin",
+      0.022570931025868837
+    ],
+    [
+      "amount_std_7d",
+      0.022000810760646153
+    ]
+  ],
+  "summary": {
+    "total_transactions": 1000000,
+    "fraud_cases": 3000,
+    "fraud_rate": 0.3,
+    "class_ratio": 332,
+    "train_rows": 814342,
+    "test_rows": 185658,
+    "test_fraud": 328,
+    "latency_p95": 340
+  }
+}
