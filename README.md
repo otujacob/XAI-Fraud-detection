@@ -1,4 +1,4 @@
-# XAI Fraud Detection — Nigerian Inter-Bank Payments
+# XAI Fraud Detection - Nigerian Inter-Bank Payments
 
 **COM 752 MSc Dissertation**  
 Otu Samuel Jacob | s25007038 | Wrexham University | 2025/2026
